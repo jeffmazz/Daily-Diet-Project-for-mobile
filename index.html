@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" defer ></script>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="script.js" defer></script>
+    
+    <title> Daily Diet </title>
+</head>
+<body>
+    
+    <!-- TOPO -->
+    <div class="container p-4 d-flex align-items-center justify-content-between">
+        <!-- LOGO -->
+        <div>
+            <img src="logoDailyDiet.png" style="width: 8rem; height: 4rem; border-radius: 5px; margin-left: 1rem;">
+        </div>
+        <!-- FOTO USUÁRIO -->
+        <div>
+            <img src="https://picsum.photos/100/100" style="width: 3.5rem; height: 3.5rem; border-radius: 4rem; margin-right: 1rem; box-shadow: 2px 2px 2px rgba(0,0,0,.7);">
+        </div>
+    </div>
+    
+    <!-- PORCENTAGEM DE REFEIÇÕES DENTRO DA DIETA -->
+    <div id="porcentagem">
+        
+        <div class="container p-4 mt-3 mb-5 rounded-3 d-grid align-items-center w90 bg-lightGreen" style="position: relative;" id="divPorcentagem">
+            
+            <p style="position: absolute; top: 65%; left: 88%;" class="fs-1 text-success" id="barDown">
+                <i class="bi-arrow-bar-down" style="cursor: pointer;"></i>
+            </p>
+            
+            <p style="position: absolute; top: 65%; left: 88%; display:none;" class="fs-1 text-success" id="barUp">
+                <i class="bi-arrow-bar-up" style="cursor: pointer;"></i>
+            </p>
+        
+            <div class="fs-1 text-center">
+                <span id="porcentagemDeRefeicoesSaudaveis">0</span>%
+            </div>
+        
+            <div class="text-center">
+                das refeições dentro da dieta
+            </div>
+        
+        </div>
+        
+    </div>
+
+    <!-- ADICIONAR NOVA REFEIÇÃO -->
+    <div id="addRef">
+        
+        <div class="container w90">
+            <div class="text-start">
+                Refeições
+            </div>
+        </div>
+    
+        <div class="container mb-5" style="width: 90%;">
+            <button class="btn btn-dark p-3 w-100" id="btnAddRef">
+            <i class="bi-plus-circle me-1"></i> Nova Refeição 
+            </button>
+        </div>
+        
+        <!-- LISTA DE REFEIÇÕES -->
+        <div class="container" id="lista">
+                    
+        </div>
+        
+    </div>
+        
+    <!-- DIV FORMULÁRIO -->
+    <div class="container p-2" id="divForm" style="display:none;">
+            
+        <!-- FORMULÁRIO -->
+        <form id="form">
+                
+            <div class="row justify-content-center">
+                
+                <!-- NOME -->
+                <div class="col-10">
+                    <label for="nome" class="form-label mb-1 fw-bold"> Nome </label>
+                    <input type="text" id="nome" class="col-10 form-control mb-3">
+                </div>
+                
+                <!-- DESCRIÇÃO -->
+                <div class="col-10">
+                    <label for="descricao" class="form-label mb-1 fw-bold"> Descrição </label>
+                    <textarea id="descricao" class="col-10 form-control mb-3" style="height: 10rem;"></textarea>
+                </div>
+                    
+                <!-- DATA -->
+                <div class="col-5">
+                    <label for="data" class="form-label mb-1 fw-bold"> Data </label>
+                    <input type="date" id="data" class="col-10 form-control mb-3">
+                </div>
+                
+                <!-- HORA -->
+                <div class="col-5">
+                    <label for="hora" class="form-label mb-1 fw-bold"> Hora </label>
+                    <input type="time" id="hora" class="col-10 form-control mb-3">
+                </div>
+                    
+            </div>
+            
+            <!-- RADIOS -->
+            <div class="row justify-content-center">
+                    
+                <div class="col-10">
+                    <p class="mb-1 fw-bold"> Está dentro da dieta ? </p>
+                </div>
+                    
+                <div class="col-5 d-flex justify-content-end">
+                            
+                    <input type="radio" name="radioDieta" id="estaNaDieta" class="btn-check">
+                    <label for="estaNaDieta" class="btn btn-outline-success w-100 fw-bold"> Sim </label>
+                            
+                </div>
+                    
+                <div class="col-5 d-flex justify-content-start">
+                        
+                    <input type="radio" name="radioDieta" id="naoEstaNaDieta" class="btn-check">
+                    <label for="naoEstaNaDieta" class="btn btn-outline-danger w-100 fw-bold"> Não </label>
+                        
+                </div>
+                
+                <div class="col-10 mt-4 mb-2">
+                    <button type="submit" id="cadastrar" class="btn btn-dark w-100"> Cadastrar </button>
+                </div>
+                
+                <div class="col-5 my-3">
+                    <button type="button" id="cancelarCadastro" class="btn btn-danger w-100"> Cancelar </button>
+                </div>
+                    
+            </div>
+            
+        </form>
+        <!-- FIM FORMULÁRIO -->
+            
+    </div>
+    <!-- FIM DIV FORMULÁRIO -->
+    
+    <!-- DIV FORMULÁRIO DE EDIÇÃO -->
+    <div class="container p-2 mb-5" id="divUpdateRefs" style="display: none;">
+        
+        <!-- FORMULÁRIO DE EDIÇÃO -->
+        <form id="updateRefsForm">
+            
+            <!-- DIV CLASS ROW PARA FORMULÁRIO -->
+            <div class="row justify-content-center">
+                
+                <!-- NOME EDIT -->
+                <div class="col-10">
+                    
+                    <label for="nomeEdit" class="form-label mb-1 fw-bold"> Nome </label>
+                    <input type="text" id="nomeEdit" class="col-10 form-control mb-3">
+                </div>
+                
+                <!-- DESCRICAO EDIT -->
+                <div class="col-10">
+                    
+                    <label for="descricaoEdit" class="form-label mb-1 fw-bold"> Descrição </label>
+                    <textarea id="descricaoEdit" class="col-10 form-control mb-3" style="height: 10rem;"></textarea>
+                    
+                </div>
+                
+                <!-- DATA EDIT -->
+                <div class="col-5">
+                    
+                    <label for="dataEdit" class="form-label mb-1 fw-bold"> Data </label>
+                    <input id="dataEdit" type="date" class="form-control mb-3">
+                    
+                </div>
+                
+                <!-- HORA EDIT -->
+                <div class="col-5">
+                    
+                    <label for="horaEdit" class="form-label mb-1 fw-bold"> Hora </label>
+                    <input id="horaEdit" type="time" class="form-control mb-4">
+                    
+                </div>
+                
+                <!-- RADIOS EDIT -->
+                <div class="col-10">
+                    <p class="mb-1 fw-bold"> Está dentro da dieta ? </p>
+                </div>
+                    
+                <div class="col-5 d-flex justify-content-end">
+                            
+                    <input type="radio" name="radioDietaEdit" id="estaNaDietaEdit" class="btn-check">
+                    <label for="estaNaDietaEdit" class="btn btn-outline-success w-100 fw-bold"> Sim </label>
+                            
+                </div>
+                
+                <div class="col-5 d-flex justify-content-start">
+                        
+                    <input type="radio" name="radioDietaEdit" id="naoEstaNaDietaEdit" class="btn-check">
+                    <label for="naoEstaNaDietaEdit" class="btn btn-outline-danger w-100 fw-bold"> Não </label>
+                        
+                </div>
+                
+                <!-- SALVAR -->
+                <button type="button" id="save" class="col-3 btn btn-dark mt-4 me-2"> Salvar </button>
+                <!-- CANCELAR -->
+                <button type="button" id="cancel-edit" class="col-3 btn btn-dark mt-4 ms-2"> Cancelar </button>
+                
+            </div>
+            
+            <div class="row justify-content-center">
+                
+                <!-- DELETE -->
+                <button type="button" id="delete" class="col-3 btn btn-outline-danger my-4"> <span class="bi-trash-fill"> </span> </button>
+                
+            </div>
+            
+        </form>
+        <!-- FIM FORMULÁRIO EDIT -->
+        
+    </div>
+    <!-- FIM DIV FORMULÁRIO EDIT -->
+    
+    
+    
+        
+    <!-- DIV ESTATÍSTICAS GERAIS-->
+    <div id="estatisticas" style="display: none;">
+    
+        <!-- ESTATISTICAS GERAIS -->
+        <div class="container-fluid p-4 rounded-4">
+        
+            <p class="text-center fs-5">
+            Estatísticas Gerais
+            </p>
+        
+            <div class="row g-3 mb-3 justify-content-around">
+            
+                <div class="col-12 rounded-4 bg-gray">
+                
+                    <p class="text-center fs-1 mt-2 mb-0" id="sequencia"> 0 </p>
+                    <p class="text-center"> melhor sequência de pratos dentro da dieta </p>
+                
+                </div>
+            
+                <div class="col-12 rounded-4 bg-gray">
+                
+                    <p class="text-center fs-1 mt-2 mb-0" id="refeicoesRegistradas"> 0 </p>
+                    <p class="text-center"> refeições registradas </p>
+                
+                </div>
+            
+                <div class="col-5 rounded-4 bg-lightGreen">
+                
+                    <p class="text-center fs-1 mt-2 mb-0" id="refeicoesSaudaveis"> 0 </p>
+                    <p class="text-center"> refeições dentro da dieta </p>
+                
+                </div>
+            
+                <div class="col-5 rounded-4 bg-lightRed">
+                
+                    <p class="text-center fs-1 mt-2 mb-0" id="refeicoesNaoSaudaveis"> 0 </p>
+                    <p class="text-center"> refeições fora da dieta </p>
+                
+                </div>
+            
+            </div>
+        
+        </div>
+    
+    </div>
+    
+    <!-- PARABENS -->
+    
+    <div id="divParabens" class="container p-3 d-none justify-content-center">
+        
+        <div class="mt-3 mb-2 text-success text-center fs-3 fw-bold">
+            Continue Assim !
+        </div>
+        
+        <div class="mb-4 text-center fs-6">
+            Você continua <span class="fw-bold">dentro da dieta.</span> Muito bem!
+        </div>
+        
+        <img src="parabens.jpg" class="mx-auto mb-4">
+        
+        
+        <button id="btnParabens" class="btn btn-dark w-75 mx-auto">
+            Ir para a página inicial
+        </button>
+        
+    </div>
+    
+    
+    
+    <!-- CONDOLENCIAS -->
+    
+    <div id="divCondolencias" class="container p-3 d-none justify-content-center">
+        
+        <div class="mt-3 mb-2 text-danger text-center fs-3 fw-bold">
+            Que pena !
+        </div>
+        
+        <div class="mb-4 text-center fs-6">
+            Você <span class="fw-bold">saiu da dieta</span> dessa vez. Mas continue se esforçando e não desista!
+        </div>
+        
+        <img src="condolencias.jpg" class="mx-auto mb-4">
+        
+        
+        <button id="btnCondolencias" class="btn btn-dark w-75 mx-auto">
+            Ir para a página inicial
+        </button>
+        
+    </div>
+    
+</body>
+</html>

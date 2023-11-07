@@ -1,0 +1,41 @@
+.w90 {
+    width: 90%;
+}
+
+.bg-gray {
+    background-color: rgba(221,211,211,.4);
+}
+
+.border-gray {
+    border: 1px solid rgb(221,211,211);
+}
+
+.bg-lightGreen {
+    background-color: rgba(144,238,144,.4);
+}
+
+.bg-lightRed {
+    background-color: rgba(255,105,97,.4);
+}
+
+.bg-lightYellow {
+    background-color: rgba(255,255,102,.4);
+}
+
+.bg {
+    width: 20px;
+    height: 23px;
+    border-radius: 20px;
+    background: rgb(144,238,144);
+}
+
+.br {
+    width: 20px;
+    height: 23px;
+    border-radius: 20px;
+    background: rgb(255,105,97);
+}
+
+.p-br {
+    word-break: break-word;
+}
