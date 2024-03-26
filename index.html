@@ -21,25 +21,25 @@
     <div class="container p-4 d-flex align-items-center justify-content-between">
         <!-- LOGO -->
         <div>
-            <img src="logoDailyDiet.png" style="width: 8rem; height: 4rem; border-radius: 5px; margin-left: 1rem;">
+            <img src="logoDailyDiet.png" class="logoImg">
         </div>
         <!-- FOTO USUÁRIO -->
         <div>
-            <img src="https://picsum.photos/100/100" style="width: 3.5rem; height: 3.5rem; border-radius: 4rem; margin-right: 1rem; box-shadow: 2px 2px 2px rgba(0,0,0,.7);">
+            <img src="./userIcon.png" alt="Profile Picture" class="profileImg">
         </div>
     </div>
     
     <!-- PORCENTAGEM DE REFEIÇÕES DENTRO DA DIETA -->
     <div id="porcentagem">
         
-        <div class="container p-4 mt-3 mb-5 rounded-3 d-grid align-items-center w90 bg-lightGreen" style="position: relative;" id="divPorcentagem">
+        <div class="container p-4 mt-3 mb-5 rounded-3 d-grid align-items-center w90 bg-lightGreen" style="position: relative; cursor: pointer;" id="divPorcentagem">
             
-            <p style="position: absolute; top: 65%; left: 88%;" class="fs-1 text-success" id="barDown">
-                <i class="bi-arrow-bar-down" style="cursor: pointer;"></i>
+            <p class="fs-1 text-success" id="barDown">
+                <i class="bi-arrow-bar-down"></i>
             </p>
             
-            <p style="position: absolute; top: 65%; left: 88%; display:none;" class="fs-1 text-success" id="barUp">
-                <i class="bi-arrow-bar-up" style="cursor: pointer;"></i>
+            <p class="fs-1 text-success" id="barUp">
+                <i class="bi-arrow-bar-up"></i>
             </p>
         
             <div class="fs-1 text-center">
@@ -93,7 +93,7 @@
                 <!-- DESCRIÇÃO -->
                 <div class="col-10">
                     <label for="descricao" class="form-label mb-1 fw-bold"> Descrição </label>
-                    <textarea id="descricao" class="col-10 form-control mb-3" style="height: 10rem;"></textarea>
+                    <textarea id="descricao" class="col-10 form-control mb-3"></textarea>
                 </div>
                     
                 <!-- DATA -->
@@ -131,7 +131,7 @@
                         
                 </div>
                 
-                <div class="col-10 mt-4 mb-2">
+                <div class="col-8 mt-4 mb-2">
                     <button type="submit" id="cadastrar" class="btn btn-dark w-100"> Cadastrar </button>
                 </div>
                 
@@ -167,7 +167,7 @@
                 <div class="col-10">
                     
                     <label for="descricaoEdit" class="form-label mb-1 fw-bold"> Descrição </label>
-                    <textarea id="descricaoEdit" class="col-10 form-control mb-3" style="height: 10rem;"></textarea>
+                    <textarea id="descricaoEdit" class="col-10 form-control mb-3"></textarea>
                     
                 </div>
                 
@@ -216,7 +216,7 @@
             <div class="row justify-content-center">
                 
                 <!-- DELETE -->
-                <button type="button" id="delete" class="col-3 btn btn-outline-danger my-4"> <span class="bi-trash-fill"> </span> </button>
+                <button type="button" id="delete" class="col-3 btn btn-outline-danger mt-4"> <span class="bi-trash-fill"> </span> </button>
                 
             </div>
             

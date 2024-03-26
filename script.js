@@ -169,7 +169,7 @@ function updateRefs() {
             let p = document.createElement("p")
             let bolinha = ""
             
-            p.classList.add("w-100", "border-gray", "p-3", "mb-2", "mx-auto", "rounded-3", "row", "p-br")
+            p.classList.add("w-100", "border-gray", "p-3", "mb-2", "mx-auto", "rounded-3", "row", "p-br", "refeicao")
         
             if (ref.saudavel == "saudavel") {
                 bolinha = "bg"

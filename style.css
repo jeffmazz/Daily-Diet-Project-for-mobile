@@ -39,3 +39,93 @@
 .p-br {
     word-break: break-word;
 }
+
+/* Alterações */
+
+.logoImg {
+    width: 8rem;
+    height: 4rem;
+    border-radius: 5px;
+    margin-left: 1rem;
+}
+
+.profileImg {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 4rem;
+    margin-right: 1rem;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.7);
+}
+
+#barDown {
+    position: absolute;
+    top: 65%;
+    left: 88%;
+}
+
+#barUp {
+    position: absolute;
+    top: 65%;
+    left: 88%;
+    display:none;
+}
+
+#descricao, #descricaoEdit {
+    height: 4rem;
+}
+
+#descricaoEdit {
+    height: 1rem;
+}
+
+.refeicao {
+    cursor: pointer;
+}
+
+@media(min-width:600px) and (max-width:767px){
+    #barDown {
+        top: 60%;
+    }
+    #barUp {
+        top: 60%;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    #barDown {
+        top: 57%;
+    }
+    #barUp {
+        top: 57%;
+    }
+    body {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media(min-width: 992px) and (max-width:1199px) {
+    #barDown {
+        top: 55%;
+    }
+    #barUp {
+        top: 55%;
+    }
+    body {
+        width: 65%;
+        margin: 0 auto;
+    }
+}
+
+@media(min-width: 1200px) {
+    #barDown {
+        top: 55%;
+    }
+    #barUp {
+        top: 55%;
+    }
+    body {
+        width: 65%;
+        margin: 0 auto;
+    }
+}
